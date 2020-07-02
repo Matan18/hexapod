@@ -2,7 +2,13 @@ import React, { Component } from "react"
 import NumberInputField from "./generic/NumberInputField"
 import { Card, BasicButton, ToggleSwitch } from "./generic/SmallWidgets"
 import { DEFAULT_DIMENSIONS } from "../templates"
-import { SECTION_NAMES, DIMENSION_NAMES, RESET_LABEL, RANGE_PARAMS } from "./vars"
+import {
+    SECTION_NAMES,
+    DIMENSION_NAMES,
+    RESET_LABEL,
+    RANGE_PARAMS,
+    ICON_COMPONENTS,
+} from "./vars"
 
 class DimensionsWidget extends Component {
     sectionName = SECTION_NAMES.dimensions
@@ -62,7 +68,9 @@ class DimensionsWidget extends Component {
     get header() {
         return (
             <div className="row-container flex-wrap">
-                <h2>{this.sectionName}</h2>
+                <h2>
+                    {ICON_COMPONENTS.dimIcon} {this.sectionName}
+                </h2>
                 {this.toggleSwitch}
             </div>
         )

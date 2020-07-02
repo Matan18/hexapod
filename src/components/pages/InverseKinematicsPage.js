@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { sliderList, Card, BasicButton } from "../generic"
 import { solveInverseKinematics } from "../../hexapod"
 import { DEFAULT_IK_PARAMS } from "../../templates"
-import { SECTION_NAMES, IK_SLIDERS_LABELS, RESET_LABEL } from "../vars"
+import { SECTION_NAMES, IK_SLIDERS_LABELS, RESET_LABEL, ICON_COMPONENTS } from "../vars"
 
 const _updatedStateParamsUnsolved = (ikParams, message) => ({
     ikParams,
@@ -55,11 +55,19 @@ class InverseKinematicsPage extends Component {
         })
     }
 
+    get header() {
+        return (
+            <h2>
+                {ICON_COMPONENTS.ikIcon} {this.pageName}
+            </h2>
+        )
+    }
+
     render() {
         const sliders = this.sliders
 
         return (
-            <Card title={this.pageName} h="h2">
+            <Card title={this.header} h="div">
                 <div className="row-container">{sliders.slice(0, 3)}</div>
                 <div className="row-container">{sliders.slice(3, 6)}</div>
                 <div className="row-container">{sliders.slice(6, 8)}</div>

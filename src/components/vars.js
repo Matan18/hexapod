@@ -1,7 +1,9 @@
 import React from "react"
 import { GiCoffeeMug } from "react-icons/gi"
-import { FaGithubAlt, FaTimes, FaCheck } from "react-icons/fa"
+import { FaGithubAlt, FaTimes, FaCheck, FaHome, FaCogs, FaHammer } from "react-icons/fa"
 import { GrStatusGoodSmall } from "react-icons/gr"
+import { IoIosCalculator } from "react-icons/io"
+import { BsListNested } from "react-icons/bs"
 
 const SECTION_NAMES = {
     dimensions: "Dimensions",
@@ -72,6 +74,11 @@ const ICON_COMPONENTS = {
     octocat: <FaGithubAlt className="vertical-align" />,
     check: <FaCheck className="vertical-align" />,
     times: <FaTimes className="vertical-align" />,
+    home: <FaHome className="vertical-align" />,
+    fkIcon: <FaCogs className="vertical-align" />,
+    ikIcon: <IoIosCalculator className="vertical-align" />,
+    pattIcon: <BsListNested className="vertical-align" />,
+    dimIcon: <FaHammer className="vertical-align" />,
 }
 
 /*************
@@ -82,18 +89,22 @@ const PATHS = {
     inverseKinematics: {
         path: PATH_NAMES.inverseKinematics,
         description: SECTION_NAMES.inverseKinematics,
+        icon: ICON_COMPONENTS.ikIcon,
     },
     forwardKinematics: {
         path: PATH_NAMES.forwardKinematics,
         description: SECTION_NAMES.forwardKinematics,
+        icon: ICON_COMPONENTS.fkIcon,
     },
     legPatterns: {
         path: PATH_NAMES.legPatterns,
         description: SECTION_NAMES.legPatterns,
+        icon: ICON_COMPONENTS.pattIcon,
     },
     landingPage: {
         path: PATH_NAMES.landingPage,
         description: SECTION_NAMES.landingPage,
+        icon: ICON_COMPONENTS.home,
     },
 }
 

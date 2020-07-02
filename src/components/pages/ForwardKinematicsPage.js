@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import LegPoseWidget from "./LegPoseWidgets"
 import { Card, ToggleSwitch, BasicButton, NumberInputField, Slider } from "../generic"
 import { DEFAULT_POSE } from "../../templates"
-import { SECTION_NAMES, LEG_NAMES, RESET_LABEL } from "../vars"
+import { SECTION_NAMES, LEG_NAMES, RESET_LABEL, ICON_COMPONENTS } from "../vars"
 
 const renderTwoColumns = cells => (
     <>
@@ -80,16 +80,22 @@ class ForwardKinematicsPage extends Component {
         </div>
     )
 
-    render = () => {
-        const cells = LEG_NAMES.map(name => this.makeCell(name))
-        const header = () => (
+    get header() {
+        return (
             <div className="row-container flex-wrap">
-                <h2>{this.pageName}</h2>
+                <h2>
+                    {ICON_COMPONENTS.fkIcon} {this.pageName}
+                </h2>
                 {this.toggleSwitch}
             </div>
         )
+    }
+
+    render = () => {
+        const cells = LEG_NAMES.map(name => this.makeCell(name))
+
         return (
-            <Card title={header()} h="div">
+            <Card title={this.header} h="div">
                 {renderTwoColumns(cells)}
                 <BasicButton handleClick={this.reset}>{RESET_LABEL}</BasicButton>
             </Card>
